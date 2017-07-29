@@ -29,5 +29,9 @@ public class MainAction {
         newsBiz.addNews(title,content);
         return "test";
     }
-
+    @RequestMapping(value = "/newsDelete",method = RequestMethod.POST)
+    public String newsDelete(@RequestParam String id){
+        newsBiz.deleteNews(id);
+        return "test";
+    }
 }

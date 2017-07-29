@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface NewsBiz {
     public void addNews(String title,String content);
+    public void updateNews(String id,String title,String content);
+    public void deleteNews(String id);
     public String getAllNews();
     public List<NewsEntity> getLatestNews();
 }
