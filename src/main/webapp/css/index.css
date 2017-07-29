@@ -1,0 +1,34 @@
+.foot
+{
+	margin: 0px auto;
+	background: #2491ca;
+}
+
+.foot-nr
+{
+	background: #2491ca;
+}
+
+.foot-wz
+{
+	background: #2491ca;
+	text-align: right;
+	line-height: 24px;
+	color: #fff;
+	padding: 20px 0px;
+}
+.p-news
+{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+.h-news{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
