@@ -18,8 +18,8 @@
     <link rel="icon" href="image\logo.jpg">
     <title>智能交互与感知实验室</title>
     <!-- Bootstrap core CSS -->
-    <link href="css\bootstrap.css" rel="stylesheet">
-    <link href="css\index.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->

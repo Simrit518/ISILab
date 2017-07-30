@@ -24,7 +24,7 @@ public class MainAction {
         modelMap.addAttribute("newslist",newsBiz.getLatestNews());
         return "index";
     }
-    @RequestMapping(value = "/newsPublish",method= RequestMethod.POST)
+    @RequestMapping(value = "/newsAdd",method= RequestMethod.POST)
     public String newsPublish(@RequestParam String title, @RequestParam String content){
         newsBiz.addNews(title,content);
         return "test";
