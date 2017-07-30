@@ -77,7 +77,7 @@
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
                 <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
                     <button class="btn btn-danger" style="width: 100%">
-                        <i class="icon-cogs"></i>
+                        <i class="icon-power-off"></i>
                     </button>
                 </div>
                 <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
@@ -119,14 +119,14 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        <h4 class="header green clearfix">
+                        <h2 class="header green clearfix">
                             新闻编辑器
-                        </h4>
+                        </h2>
                         <form action="newsPublish" method="post">
-                            <p>新闻标题<input id="title" type="text" name="title" ></p>
+                            <h3>新闻标题:<input id="title" type="text" name="title""></h3>
                             <div class="wysiwyg-editor" id="editor1"></div>
                             <input id="content" type="text" name="content" class="hidden">
-                            <button id="mybutton" class="btn btn-success" type="button" onclick="newsAddFunc()">发布</button>
+                            <button id="mybutton" class="btn btn-large btn-success"  style="margin-top: 10px" type="button" onclick="newsAddFunc()">发布</button>
                         </form>
                         <script type="text/javascript">
                             function newsAddFunc(){

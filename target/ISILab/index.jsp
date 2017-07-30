@@ -8,75 +8,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="liuzhen">
-    <link rel="icon" href="image\logo.jpg">
-    <title>智能交互与感知实验室</title>
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="navbar-static-top.css" rel="stylesheet">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
 
+<%@ include file="WEB-INF/head.jsp"%>
 <body>
-<div class="container">
-    <div style="width:auto;height:30px;border:1px solid #000;background-color: #673566"></div>
-    <div class="row">
-        <div class="col-xs-3">
-            <a href="#"><img src="image\logo.jpg" alt="..."></a>
-        </div>
-        <div class="col-xs-1 col-xs-offset-8" style="margin-top: 35px">
-            <div class="row">中文|English</div>
-            <div class="row">
-                <p style="color: #be87be">登录</p>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- 导航栏 -->
-<nav class="navbar navbar-default">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">主页</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="#about">新闻公告</a></li>
-                <li><a href="#about">实验室概况</a></li>
-                <li><a href="#contact">科学研究</a></li>
-                <li><a href="#about">课程教学</a></li>
-                <li><a href="#about">科研人员</a></li>
-                <li><a href="#about">活动</a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
+<%@ include file="WEB-INF/navbar.jsp"%>
 <!--导航栏结束 -->
 <!-- 主容器 -->
 <div class="container">
@@ -293,23 +229,7 @@
 <!-- /主容器结束 -->
 <div style="width:auto;height:35px;border:1px solid #000;background-color: #673566;margin-top: 30px;"></div>
 <!--底部栏-->
-<div style="background: #CBCBCB;">
-    <div class="container">
-        <div style="background:#CBCBCB ">
-            <div class="col-xs-12 col-sm-3 col-md-3">
-                <a href="">
-                    <img class="img-responsive" src="image\nklogo.png" style="margin-top: 10px" />
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-9 col-md-9">
-                <div style="background: #CBCBCB;text-align: right;line-height: 24px;color: #FFFFFF;margin-top:10px;padding: 20px 0px;">
-                    <p><a href="">关于实验室</a>&nbsp;&nbsp;&nbsp;<a href="">南开大学</a>&nbsp;&nbsp;&nbsp;<a href="">计算机与控制工程学院</a>&nbsp;&nbsp;&nbsp;<a href="">自动化系</a>&nbsp;&nbsp;&nbsp;<a href="">管理</a>&nbsp;&nbsp;&nbsp;</p>
-                    <p>版权所有：南开大学 智能交互与感知实验室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案/许可证编号：津ICP备15020744号</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<%@ include file="WEB-INF/footer.jsp"%>
 <!--底部栏-->
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -322,5 +242,4 @@
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../../assets/js/ie10-viewport-bug-workaround.js "></script>
 </body>
-
 </html>

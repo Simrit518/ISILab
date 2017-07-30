@@ -57,19 +57,13 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 //        return  criteria.list();
     }
     //page:当前页，pagesize:每页条数
-    public List<T> pagedBySql(String sql, String[] variables, int page, int pageSize, Serializable...values){
-        Query<T> query=getSession().createQuery(sql);
-        if (variables!=null){
-            for (int i=0;i<values.length;i++){
-                query.setParameter(variables[i], values[i]);
-            }
-        }
-        query.setFirstResult((page-1)*pageSize);
-        query.setMaxResults(pageSize);
-        List<T> temp = (List<T>)(query
-                .stream()
-                .collect(Collectors.toList()));
-        return temp;
+    public List<T> pagedByHql(int page){
+        String hql="from "+cls.getName();
+        Query<T> query=getSession().createQuery(hql);
+        query.setFirstResult((page-1)*5);
+        query.setMaxResults(5);
+        List<T> list=query.list();
+        return list;
     }
     public long count() {
         try {

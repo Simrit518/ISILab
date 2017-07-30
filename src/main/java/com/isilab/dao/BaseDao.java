@@ -13,6 +13,6 @@ public interface BaseDao<T> {
     public void delete(T obj);
     public List<T> getAll();
     public List<T> getLatest();
-    public List<T> pagedBySql(String sql,String[] variables,int page,int pageSize,Serializable...values);
+    public List<T> pagedByHql(int page);
     public long count();
 }

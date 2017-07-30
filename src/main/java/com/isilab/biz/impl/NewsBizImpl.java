@@ -32,12 +32,35 @@ public class NewsBizImpl implements NewsBiz {
         newsDao.get(id).setContent(content);
         newsDao.update(newsDao.get(id));
     }
-    public String getAllNews() {
-        List<NewsEntity> news=newsDao.getAll();
-        return StrToJson.allnewstojson(news);
+    public List<NewsEntity> getAllNews() {
+        return newsDao.getAll();
     }
 
     public List<NewsEntity> getLatestNews() {
         return newsDao.getLatest();
+    }
+    @Transactional
+    public NewsEntity getNews(long id){
+        return newsDao.get(id);
+    }
+    @Transactional
+    public long pageCount(){
+        List<NewsEntity> list=newsDao.getAll();
+        if (list==null||list.size()==1)
+            return 1;
+        long temp=list.size();
+        if (temp%5!=0||temp==0)
+            return temp/5+1;
+        return temp/5;
+    }
+    @Transactional
+    public List<NewsEntity> getNewsByPage(int page){
+        long count =pageCount();
+        if (page<0)
+            page=0;
+        if (page>count)
+            page=(int)count;
+        List<NewsEntity> list=newsDao.pagedByHql(page);
+        return list;
     }
 }
