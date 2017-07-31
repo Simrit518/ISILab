@@ -13,7 +13,7 @@ public class NewsEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private int id;
     @Column(name = "title")
     private String title;
     @Column(name = "content")
@@ -27,7 +27,7 @@ public class NewsEntity  {
         this.content=content;
         this.date=date;
     }
-    public long getId() {
+    public int getId() {
         return id;
     }
 

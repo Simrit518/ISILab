@@ -2,6 +2,7 @@ package com.isilab.biz;
 
 import com.isilab.entity.NewsEntity;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ public interface NewsBiz {
     public void deleteNews(String id);
     public List<NewsEntity> getAllNews();
     public List<NewsEntity> getLatestNews();
-    NewsEntity getNews(long id);
+    NewsEntity getNews(int id);
     long pageCount();
     List<NewsEntity> getNewsByPage(int page);
 }

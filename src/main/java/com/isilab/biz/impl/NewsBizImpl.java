@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class NewsBizImpl implements NewsBiz {
         return newsDao.getLatest();
     }
     @Transactional
-    public NewsEntity getNews(long id){
+    public NewsEntity getNews(int id){
         return newsDao.get(id);
     }
     @Transactional

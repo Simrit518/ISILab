@@ -24,47 +24,56 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     //获取T真实类
     @SuppressWarnings("rawtypes")
     private Class cls;
-    public BaseDaoImpl(){
-        this.cls=(Class<T>)((ParameterizedType)this.getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+
+    public BaseDaoImpl() {
+        this.cls = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     }
+
     public T get(Serializable id) {
-        return (T)getSession().get(cls, id);
+        return (T) getSession().get(cls, id);
     }
-    public void save(T obj){
+
+    public void save(T obj) {
         getSession().save(obj);
     }
-    public void update(T obj){
+
+    public void update(T obj) {
         getSession().update(obj);
     }
-    public void delete(T obj){
+
+    public void delete(T obj) {
         getSession().delete(obj);
     }
-    public List<T> getAll(){
-        String hql="from "+cls.getName();
-        Query<T> query=getSession().createQuery(hql);
-        List<T> list=query.list();
+
+    public List<T> getAll() {
+        String hql = "from " + cls.getName();
+        Query<T> query = getSession().createQuery(hql);
+        List<T> list = query.list();
         return list;
     }
-    public List<T> getLatest(){
+
+    public List<T> getLatest() {
         //from后一定要加空格
-        String hql="from "+cls.getName();
-        Query<T> query=getSession().createQuery(hql);
-        query.setMaxResults(3);
-        List<T> list=query.list();
+        String hql = "from " + cls.getName();
+        Query<T> query = getSession().createQuery(hql);
+        query.setMaxResults(6);
+        List<T> list = query.list();
         return list;
 //        Criteria criteria=sessionFactory.getCurrentSession().createCriteria(cls.getName());
 //        criteria.setMaxResults(3);
 //        return  criteria.list();
     }
+
     //page:当前页，pagesize:每页条数
-    public List<T> pagedByHql(int page){
-        String hql="from "+cls.getName();
-        Query<T> query=getSession().createQuery(hql);
-        query.setFirstResult((page-1)*5);
+    public List<T> pagedByHql(int page) {
+        String hql = "from " + cls.getName();
+        Query<T> query = getSession().createQuery(hql);
+        query.setFirstResult((page - 1) * 5);
         query.setMaxResults(5);
-        List<T> list=query.list();
+        List<T> list = query.list();
         return list;
     }
+
     public long count() {
         try {
             String sql = "select count(*) from " + cls.getName();
@@ -74,8 +83,8 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
             return -1;
         }
     }
-    public Session getSession(){
+
+    public Session getSession() {
         return sessionFactory.getCurrentSession();
     }
-
 }

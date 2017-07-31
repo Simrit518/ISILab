@@ -10,7 +10,7 @@
     <div style="width:auto;height:30px;border:1px solid #000;background-color: #673566"></div>
     <div class="row">
         <div class="col-xs-3">
-            <a href="#"><img src="image\logo.jpg" alt="..."></a>
+            <a href="#"><img src="<%=path%>/image/logo.jpg" alt="..."></a>
         </div>
         <div class="col-xs-2 col-xs-offset-7" style="margin-top: 35px">
             <div class="row">中文|English</div>
@@ -35,7 +35,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="http://localhost:8080/ISILab/news">新闻公告</a></li>
+                <li><a href="<%=path%>/news">新闻公告</a></li>
                 <li><a href="#about">实验室概况</a></li>
                 <li><a href="#contact">科学研究</a></li>
                 <li><a href="#about">课程教学</a></li>
