@@ -147,7 +147,7 @@
                             <h4>内容分类：<select class="form-control" id="kind" name="kind" style="width: 200px">
                                 <option value="news">新闻</option>
                                 <option value="academics">学术研究</option>
-                                <option value="achievement">成果展示</option>
+                                <option value="result">成果展示</option>
                                 <option value="document">学术文献</option>
                             </select></h4>
                             <div class="wysiwyg-editor" id="editor1"></div>
