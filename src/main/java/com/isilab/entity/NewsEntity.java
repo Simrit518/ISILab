@@ -20,12 +20,19 @@ public class NewsEntity  {
     private String content;
     @Column(name = "date")
     private Date date;
+    @Column(name = "summary")
+    private String summary;
+    @Column(name = "kind")
+    private String kind;
+
     public NewsEntity(){
     }
-    public NewsEntity(String title,String content,Date date){
+    public NewsEntity(String title,String content,Date date,String summary,String kind){
         this.title=title;
         this.content=content;
         this.date=date;
+        this.summary=summary;
+        this.kind=kind;
     }
     public int getId() {
         return id;
@@ -57,5 +64,21 @@ public class NewsEntity  {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
     }
 }

@@ -51,7 +51,7 @@
             <a href="#" class="navbar-brand">
                 <small>
                     <i class="icon-leaf"></i>
-                    Ace Admin
+                    实验室网站后台管理系统
                 </small>
             </a>
             <!-- /.brand -->
@@ -91,14 +91,32 @@
             <ul class="nav nav-list">
                 <li class="active">
                     <a href="index.html">
-                        <i class="icon-dashboard"></i>
-                        <span class="menu-text"> 发布新闻 </span>
+                        <i class="icon-edit"></i>
+                        <span class="menu-text"> 发布内容 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<%=path%>/adminnews">
+                        <i class="icon-list"></i>
+                        <span class="menu-text"> 新闻 </span>
                     </a>
                 </li>
                 <li>
                     <a href="typography.html">
-                        <i class="icon-text-width"></i>
-                        <span class="menu-text"> 新闻列表 </span>
+                        <i class="icon-list"></i>
+                        <span class="menu-text"> 学术研究 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="typography.html">
+                        <i class="icon-list"></i>
+                        <span class="menu-text"> 成果展示 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="typography.html">
+                        <i class="icon-list"></i>
+                        <span class="menu-text"> 学术文献 </span>
                     </a>
                 </li>
             </ul>
@@ -123,7 +141,15 @@
                             新闻编辑器
                         </h2>
                         <form action="newsPublish" method="post">
-                            <h3>新闻标题:<input id="title" type="text" name="title""></h3>
+                            <h4>新闻标题:<input id="title" type="text" name="title"></h4>
+                            <h4>摘&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;要:</h4>
+                            <textarea class="form-control" id="summary" placeholder=""></textarea>
+                            <h4>内容分类：<select class="form-control" id="kind" name="kind" style="width: 200px">
+                                <option value="news">新闻</option>
+                                <option value="academics">学术研究</option>
+                                <option value="achievement">成果展示</option>
+                                <option value="document">学术文献</option>
+                            </select></h4>
                             <div class="wysiwyg-editor" id="editor1"></div>
                             <input id="content" type="text" name="content" class="hidden">
                             <button id="mybutton" class="btn btn-large btn-success"  style="margin-top: 10px" type="button" onclick="newsAddFunc()">发布</button>
@@ -132,17 +158,25 @@
                             function newsAddFunc(){
                                 $('#content').val($('#editor1').html());
                                 var title = $('#title').val();
+                                var summary=$('#summary').val();
                                 var content = $('#content').val();
-
+                                var kind=$('#kind').val();
                                 //发送post请求
                                 $.post(
                                     'newsAdd',
                                     {
                                         title:title,
-                                        content:content
+                                        summary:summary,
+                                        content:content,
+                                        kind:kind
                                     },
                                     function(data,status){
-
+                                        if(status=="success"){
+                                            alert("发布成功" );
+                                        }
+                                        else {
+                                            alert("发布失败");
+                                        }
                                     }
                                 );
                             }

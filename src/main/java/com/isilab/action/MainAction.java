@@ -42,6 +42,22 @@ public class MainAction {
         return "newslist";
     }
 
+    @RequestMapping(value = "/adminnews", produces = "text/html;charset=UTF-8")
+    public String adnewsshow(
+            @RequestParam(name = "page", defaultValue = "1") int page,
+            ModelMap modelMap) {
+        if (page < 1)
+            page = 1;
+        int temp = (int) newsBiz.pageCount();
+        if (page > temp)
+            page = temp;
+        List<NewsEntity> list = newsBiz.getAllNews();
+        modelMap.addAttribute("newslist", list);
+        modelMap.addAttribute("page", page);
+        modelMap.addAttribute("pageTotal", temp);
+        return "adnewslist";
+    }
+
     @RequestMapping(value = "/news/{id}", method = RequestMethod.GET)
     public String getNews(
             @PathVariable(name = "id") int id,
@@ -53,13 +69,13 @@ public class MainAction {
     }
 
     @RequestMapping(value = "/newsAdd", method = RequestMethod.POST)
-    public String newsPublish(@RequestParam String title, @RequestParam String content) {
-        newsBiz.addNews(title, content);
+    public String newsPublish(@RequestParam String title, @RequestParam String content, @RequestParam String summary, @RequestParam String kind) {
+        newsBiz.addNews(title, content,summary,kind);
         return "test";
     }
 
     @RequestMapping(value = "/newsDelete", method = RequestMethod.POST)
-    public String newsDelete(@RequestParam String id) {
+    public String newsDelete(@RequestParam int id) {
         newsBiz.deleteNews(id);
         return "test";
     }

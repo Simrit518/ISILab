@@ -1,15 +1,12 @@
 package com.isilab.biz.impl;
 
 import com.isilab.biz.NewsBiz;
-import com.isilab.dao.BaseDao;
 import com.isilab.dao.NewsDao;
 import com.isilab.entity.NewsEntity;
-import com.isilab.tool.StrToJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -21,11 +18,11 @@ import java.util.List;
 public class NewsBizImpl implements NewsBiz {
     @Autowired
     private NewsDao newsDao;
-    public void addNews(String title,String content) {
-        NewsEntity newsEntity=new NewsEntity(title,content,new Date(new java.util.Date().getTime()));
+    public void addNews(String title,String content,String summary,String kind) {
+        NewsEntity newsEntity=new NewsEntity(title,content,new Date(new java.util.Date().getTime()),summary,kind);
         newsDao.save(newsEntity);
     }
-    public void deleteNews(String id){
+    public void deleteNews(int id){
         newsDao.delete(newsDao.get(id));
     }
     public void updateNews(String id,String title,String content){

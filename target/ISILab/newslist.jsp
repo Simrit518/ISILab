@@ -29,7 +29,7 @@
             %>
             <div class="list-group">
                 <%for (NewsEntity n : list) {%>
-                    <a href="<%=path%>/news/<%=n.getId()%>" class="list-group-item"><%=n.getTitle()%><%=n.getDate()%></a>
+                    <a href="<%=path%>/news/<%=n.getId()%>" class="list-group-item"><%=n.getTitle()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=n.getDate()%></a>
                 <%}%>
             </div>
 
