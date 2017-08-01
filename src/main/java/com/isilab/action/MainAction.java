@@ -31,10 +31,10 @@ public class MainAction {
 
     @RequestMapping(value = "", produces = "text/html;charset=UTF-8")
     public String init(ModelMap modelMap) {
-        modelMap.addAttribute("newslist", newsBiz.getLatestNews());
-//        modelMap.addAttribute("academicslist", academicsBiz.getLatestAcademics());
-//        modelMap.addAttribute("resultlist", resultBiz.getLatestResult());
-//        modelMap.addAttribute("documentlist", documentBiz.getLatestDocument());
+        modelMap.addAttribute("newslist", newsBiz.getLatestNews(6));
+        modelMap.addAttribute("academicslist", academicsBiz.getLatestAcademics(3));
+        modelMap.addAttribute("resultlist", resultBiz.getLatestResult(3));
+        modelMap.addAttribute("documentlist", documentBiz.getLatestDocument(3));
         return "index";
     }
 

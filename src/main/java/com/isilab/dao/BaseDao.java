@@ -12,7 +12,7 @@ public interface BaseDao<T> {
     public void update(T obj);
     public void delete(T obj);
     public List<T> getAll();
-    public List<T> getLatest();
+    public List<T> getLatest(int number);
     public List<T> pagedByHql(int page);
     public long count();
 }

@@ -29,8 +29,8 @@ public class ResultBizImpl implements ResultBiz {
         return resultDao.getAll();
     }
 
-    public List<ResultEntity> getLatestResult() {
-        return resultDao.getLatest();
+    public List<ResultEntity> getLatestResult(int number) {
+        return resultDao.getLatest(number);
     }
     @Transactional
     public ResultEntity getResult(int id){

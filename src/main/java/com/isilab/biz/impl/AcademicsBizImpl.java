@@ -29,8 +29,8 @@ public class AcademicsBizImpl implements AcademicsBiz {
         return academicsDao.getAll();
     }
 
-    public List<AcademicsEntity> getLatestAcademics() {
-        return academicsDao.getLatest();
+    public List<AcademicsEntity> getLatestAcademics(int number) {
+        return academicsDao.getLatest(number);
     }
     @Transactional
     public AcademicsEntity getAcademics(int id){

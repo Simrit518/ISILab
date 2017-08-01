@@ -1,5 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
 <%@ page import="com.isilab.entity.NewsEntity" %>
+<%@ page import="com.isilab.entity.AcademicsEntity" %>
+<%@ page import="com.isilab.entity.ResultEntity" %>
+<%@ page import="com.isilab.entity.DocumentEntity" %>
 
 <%
     String path = request.getContextPath();
@@ -75,35 +78,38 @@
         </p>
         <hr style="height:2px;border:none;border-top:2px ridge #CCCCCC;margin-top:-10px"/>
         <%
-            List<NewsEntity> list = (List<NewsEntity>) request.getAttribute("newslist");
+            List<NewsEntity> listn = (List<NewsEntity>) request.getAttribute("newslist");
+            List<AcademicsEntity> lista=(List<AcademicsEntity>) request.getAttribute("academicslist");
+            List<ResultEntity> listr=(List<ResultEntity>) request.getAttribute("resultlist");
+            List<DocumentEntity> listd=(List<DocumentEntity>) request.getAttribute("documentlist");
         %>
         <div class="col-xs-3">
             <img src="image\news\1.jpg">
-            <h3 class="h-news"><%=list.get(0).getTitle()%>
+            <h3 class="h-news"><%=listn.get(0).getTitle()%>
             </h3>
-            <p class="p-news"><%=list.get(0).getSummary()%>
-            </p><a href="<%=path%>/news/<%=list.get(0).getId()%>">更多&gt;&gt;</a>
+            <p class="p-news"><%=listn.get(0).getSummary()%>
+            </p><a href="<%=path%>/news/<%=listn.get(0).getId()%>">更多&gt;&gt;</a>
         </div>
         <div class="col-xs-3" ><img src="image\news\2.jpg">
-            <h3 class="h-news"><%=list.get(1).getTitle()%>
+            <h3 class="h-news"><%=listn.get(1).getTitle()%>
             </h3>
-            <p class="p-news"><%=list.get(1).getSummary()%>
-            </p><a href="<%=path%>/news/<%=list.get(1).getId()%>">更多&gt;&gt;</a>
+            <p class="p-news"><%=listn.get(1).getSummary()%>
+            </p><a href="<%=path%>/news/<%=listn.get(1).getId()%>">更多&gt;&gt;</a>
         </div>
         <div class="col-xs-3" ><img src="image\news\3.jpg">
-            <h3 class="h-news"><%=list.get(2).getTitle()%>
+            <h3 class="h-news"><%=listn.get(2).getTitle()%>
             </h3>
-            <p class="p-news"><%=list.get(2).getSummary()%>
-            </p><a href="<%=path%>/news/<%=list.get(2).getId()%>">更多&gt;&gt;</a>
+            <p class="p-news"><%=listn.get(2).getSummary()%>
+            </p><a href="<%=path%>/news/<%=listn.get(2).getId()%>">更多&gt;&gt;</a>
         </div>
         <div class="col-xs-2">
             <h3 >其他相关新闻</h3>
             <ul style="margin-right: 30px">
-                <li><a href="<%=path%>/news/<%=list.get(3).getId()%>"><%=list.get(3).getTitle()%>
+                <li><a href="<%=path%>/news/<%=listn.get(3).getId()%>"><%=listn.get(3).getTitle()%>
                 </a></li>
-                <li><a href="<%=path%>/news/<%=list.get(4).getId()%>"><%=list.get(4).getTitle()%>
+                <li><a href="<%=path%>/news/<%=listn.get(4).getId()%>"><%=listn.get(4).getTitle()%>
                 </a></li>
-                <li><a href="<%=path%>/news/<%=list.get(5).getId()%>"><%=list.get(5).getTitle()%>
+                <li><a href="<%=path%>/news/<%=listn.get(5).getId()%>"><%=listn.get(5).getTitle()%>
                 </a></li>
             </ul>
             <a href="<%=path%>/news" style="margin-left: 20px">更多&gt;&gt;</a>
@@ -116,10 +122,9 @@
                 <font size="3px">学术研究</font>
             </p>
             <hr style="height:2px;border:none;border-top:2px ridge #CCCCCC;margin-top:-10px"/>
-            <p>这是一条学术研究的概要，要看详细信息请点击下方链接<a href="#">更多&gt;&gt;</a></p>
-            <p>这是一条学术研究的概要，要看详细信息请点击下方链接<a href="#">更多&gt;&gt;</a></p>
-            <p>这是一条学术研究的概要，要看详细信息请点击下方链接<a href="#">更多&gt;&gt;</a></p>
-            <a href="#">更多&gt;&gt;</a>
+            <%for(AcademicsEntity academicsEntity:lista){%>
+            <p><%=academicsEntity.getTitle()%><a href="<%=path%>/academics/<%=academicsEntity.getId()%>">更多&gt;&gt;</a></p><%}%>
+            <a href="<%=path%>/academics">更多&gt;&gt;</a>
         </div>
         <div class="col-xs-4">
             <p>
@@ -127,13 +132,10 @@
                 <font size="3px">成果展示</font>
             </p>
             <hr style="height:2px;border:none;border-top:2px ridge #CCCCCC;margin-top:-10px"/>
-            <p>这是一条最近的最新的成果展示这是一条最近的最新</p>
-            <p>11:30 AM</p>
-            <p>这是一条最近的最新的成果展示这是一条最近的最新</p>
-            <p>11:30 AM</p>
-            <p>这是一条最近的最新的成果展示这是一条最近的最新</p>
-            <p>11:30 AM</p>
-            <a href="#">更多&gt;&gt;</a>
+            <%for (ResultEntity resultEntity:listr){%>
+            <p><a href="<%=path%>/result/<%=resultEntity.getId()%>"><%=resultEntity.getTitle()%></a></p>
+            <p><%=resultEntity.getDate()%></p><%}%>
+            <a href="<%=path%>/result">更多&gt;&gt;</a>
         </div>
         <div class="col-xs-4">
             <p>
@@ -144,17 +146,16 @@
             <div class="row">
                 <div class="col-xs-3"><img src="image\literature\1.jpg" style="width: 100px;height: 80px"></div>
                 <div class="col-xs-8 col-xs-offset-1">
-                    <p>机器学习(Machine Learning,
-                        ML)是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科。专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能，重新组织已有的知识结构使之不断改善自身的性能。</p>
+                    <p><%=listd.get(0).getTitle()%><a href="<%=path%>/document/<%=listd.get(0).getId()%>">    更多&gt;&gt;</a></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-3"><img src="image\literature\2.jpg" style="width: 100px;height: 80px"></div>
                 <div class="col-xs-8 col-xs-offset-1">
-                    <p>机器学习(Machine Learning,
-                        ML)是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科。专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能，重新组织已有的知识结构使之不断改善自身的性能。</p>
+                    <p><%=listd.get(1).getTitle()%><a href="<%=path%>/document/<%=listd.get(1).getId()%>">    更多&gt;&gt;</a></p>
                 </div>
             </div>
+            <p><a href="<%=path%>/document">更多&gt;&gt;</a></p>
         </div>
     </div>
     <div class="row">

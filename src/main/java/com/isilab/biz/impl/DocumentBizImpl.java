@@ -29,8 +29,8 @@ public class DocumentBizImpl implements DocumentBiz {
         return documentDao.getAll();
     }
 
-    public List<DocumentEntity> getLatestDocument() {
-        return documentDao.getLatest();
+    public List<DocumentEntity> getLatestDocument(int number) {
+        return documentDao.getLatest(number);
     }
     @Transactional
     public DocumentEntity getDocument(int id){

@@ -103,19 +103,19 @@
                 </li>
                 <li>
                     <a href="typography.html">
-                        <i class="icon-list"></i>
+                        <i class="icon-tag"></i>
                         <span class="menu-text"> 学术研究 </span>
                     </a>
                 </li>
                 <li>
                     <a href="typography.html">
-                        <i class="icon-list"></i>
+                        <i class="icon-desktop"></i>
                         <span class="menu-text"> 成果展示 </span>
                     </a>
                 </li>
                 <li>
                     <a href="typography.html">
-                        <i class="icon-list"></i>
+                        <i class="icon-file"></i>
                         <span class="menu-text"> 学术文献 </span>
                     </a>
                 </li>

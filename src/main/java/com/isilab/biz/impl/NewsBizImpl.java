@@ -34,8 +34,8 @@ public class NewsBizImpl implements NewsBiz {
         return newsDao.getAll();
     }
 
-    public List<NewsEntity> getLatestNews() {
-        return newsDao.getLatest();
+    public List<NewsEntity> getLatestNews(int number) {
+        return newsDao.getLatest(number);
     }
     @Transactional
     public NewsEntity getNews(int id){

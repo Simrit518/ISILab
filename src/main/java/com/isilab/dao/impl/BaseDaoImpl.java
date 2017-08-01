@@ -52,11 +52,11 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         return list;
     }
 
-    public List<T> getLatest() {
+    public List<T> getLatest(int number) {
         //from后一定要加空格
         String hql = "from " + cls.getName();
         Query<T> query = getSession().createQuery(hql);
-        query.setMaxResults(6);
+        query.setMaxResults(number);
         List<T> list = query.list();
         return list;
 //        Criteria criteria=sessionFactory.getCurrentSession().createCriteria(cls.getName());

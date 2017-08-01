@@ -13,7 +13,7 @@ public interface NewsBiz {
     public void updateNews(String id,String title,String content);
     public void deleteNews(int id);
     public List<NewsEntity> getAllNews();
-    public List<NewsEntity> getLatestNews();
+    public List<NewsEntity> getLatestNews(int number);
     NewsEntity getNews(int id);
     long pageCount();
     List<NewsEntity> getNewsByPage(int page);
