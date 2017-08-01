@@ -146,16 +146,16 @@
             <div class="row">
                 <div class="col-xs-3"><img src="image\literature\1.jpg" style="width: 100px;height: 80px"></div>
                 <div class="col-xs-8 col-xs-offset-1">
-                    <p><%=listd.get(0).getTitle()%><a href="<%=path%>/document/<%=listd.get(0).getId()%>">更多&gt;&gt;</a></p>
+                    <p><%=listd.get(0).getTitle()%><a href="<%=path%>/document/<%=listd.get(0).getId()%>">    更多&gt;&gt;</a></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-3"><img src="image\literature\2.jpg" style="width: 100px;height: 80px"></div>
                 <div class="col-xs-8 col-xs-offset-1">
-                    <p><%=listd.get(1).getTitle()%><a href="<%=path%>/document/<%=listd.get(1).getId()%>">更多&gt;&gt;</a></p>
+                    <p><%=listd.get(1).getTitle()%><a href="<%=path%>/document/<%=listd.get(1).getId()%>">    更多&gt;&gt;</a></p>
                 </div>
             </div>
-            <a href="<%=path%>/document">更多&gt;&gt;</a>
+            <p><a href="<%=path%>/document">更多&gt;&gt;</a></p>
         </div>
     </div>
     <div class="row">

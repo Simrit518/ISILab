@@ -15,4 +15,6 @@ public interface BaseDao<T> {
     public List<T> getLatest(int number);
     public List<T> pagedByHql(int page);
     public long count();
+    public List<T> findBySql(String sql, String [] variables, Serializable...values);
+    public T getByParameter(String paraName, Serializable para, String symbol);
 }

@@ -91,7 +91,7 @@
             <!-- #sidebar-shortcuts -->
             <ul class="nav nav-list">
                 <li>
-                    <a href="<%=path%>/admin.jsp">
+                    <a href="<%=path%>/admin">
                         <i class="icon-edit"></i>
                         <span class="menu-text"> 发布内容 </span>
                     </a>

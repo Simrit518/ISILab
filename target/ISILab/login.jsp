@@ -1,20 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Simrit
-  Date: 2017/7/29
-  Time: 14:48
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-    <title>登录-华宁巡检后台</title>
+    <title>登录-实验室管理后台</title>
 
     <meta name="description" content="User login page" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link href="images/logo.png" rel="shortcut icon" />
+    <link href="image/logo.jpg" rel="shortcut icon" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="font-awesome/4.2.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="fonts/fonts.googleapis.com.css" />
@@ -49,7 +46,7 @@
                 <div class="login-container" style="width:402px">
                     <div class="center">
                         <h1>
-                            <img class="logoClass" alt="logo" src="image/logo.png">
+                            <%--<img class="logoClass" alt="logo" src="image/logo.jpg">--%>
                             <!-- <i class="ace-icon fa fa-leaf blue"></i> -->
                             <span class="red">实验室</span>
                             <span class="grey" id="id-text2">后台管理系统</span>
@@ -87,7 +84,7 @@
                                         catch(Exception e){}
 
                                     %>
-                                    <form name="logform" action="userLogin" method="post">
+                                    <form name="logform" action="login" method="post">
                                         <fieldset>
                                             <label class="block clearfix">
                                                     <span class="block input-icon input-icon-right">

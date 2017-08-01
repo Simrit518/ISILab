@@ -84,6 +84,35 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         }
     }
 
+    public List<T> findBySql(String sql, String[] variables,
+                             Serializable... values) {
+        Query<T> query = getSession().createQuery(sql);
+        if(variables != null){
+            for(int i = 0 ; i < variables.length ; i ++){
+                query.setParameter(variables[i], values[i]);
+            }
+        }
+
+        List<T> temp = (List<T>)(query
+                .stream()
+                .collect(Collectors.toList()));
+
+        return temp;
+    }
+
+    public T getByParameter(String paraName, Serializable para, String symbol) {
+        //String sql = "from " + cls.getName() + " where " + paraName + "=:" + paraName;
+        String sql = "from " + cls.getName() + " where " + paraName + symbol + ":" + paraName;
+        String[] variables = {paraName};
+        Serializable[] paras = {para};
+        List<T> objList = this.findBySql(sql, variables, paras);
+        if (objList != null && objList.size() > 0) {
+            return objList.get(0);
+        } else {
+            return null;
+        }
+    }
+
     public Session getSession() {
         return sessionFactory.getCurrentSession();
     }

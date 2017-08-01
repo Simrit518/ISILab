@@ -16,8 +16,8 @@
 <div class="container">
     <div class="row" style="margin-top: 30px">
         <p>
-            <font size="5px" color="#673566">NEWS</font>
-            <font size="3px">新闻</font>
+            <font size="5px" color="#673566">Academics</font>
+            <font size="3px">学术研究</font>
         </p>
         <hr style="height:2px;border:none;border-top:2px ridge #CCCCCC;margin-top:-10px"/>
         <!-- 新闻列表表单 -->
