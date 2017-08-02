@@ -30,7 +30,7 @@ public class AdminAction {
     @Autowired
     private DocumentBiz documentBiz;
     @RequestMapping(value = "/adminnews", produces = "text/html;charset=UTF-8")
-    public String adnewsshow(
+    public String adminnews(
             @RequestParam(name = "page", defaultValue = "1") int page,
             HttpSession httpSession,
             ModelMap modelMap) {
@@ -41,7 +41,7 @@ public class AdminAction {
         int temp = (int) newsBiz.pageCount();
         if (page > temp)
             page = temp;
-        List<NewsEntity> list = newsBiz.getAllNews();
+        List<NewsEntity> list = newsBiz.getNewsByPage(page);
         modelMap.addAttribute("newslist", list);
         modelMap.addAttribute("page", page);
         modelMap.addAttribute("pageTotal", temp);

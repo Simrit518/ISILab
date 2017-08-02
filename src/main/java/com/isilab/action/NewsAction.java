@@ -30,7 +30,9 @@ public class NewsAction {
             page = temp;
         List<NewsEntity> list = newsBiz.getNewsByPage(page);
         modelMap.addAttribute("newslist", list);
+        //当前页
         modelMap.addAttribute("page", page);
+        //总页码
         modelMap.addAttribute("pageTotal", temp);
         return "newslist";
     }

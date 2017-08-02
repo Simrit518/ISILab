@@ -46,7 +46,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     }
 
     public List<T> getAll() {
-        String hql = "from " + cls.getName();
+        String hql = "from " + cls.getName()+" c"+" order by c.date DESC";
         Query<T> query = getSession().createQuery(hql);
         List<T> list = query.list();
         return list;
@@ -54,7 +54,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 
     public List<T> getLatest(int number) {
         //from后一定要加空格
-        String hql = "from " + cls.getName();
+        String hql = "from " + cls.getName()+" c"+" order by c.date DESC";
         Query<T> query = getSession().createQuery(hql);
         query.setMaxResults(number);
         List<T> list = query.list();
@@ -66,10 +66,10 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 
     //page:当前页，pagesize:每页条数
     public List<T> pagedByHql(int page) {
-        String hql = "from " + cls.getName();
+        String hql = "from " + cls.getName()+" c"+" order by c.date DESC";
         Query<T> query = getSession().createQuery(hql);
-        query.setFirstResult((page - 1) * 5);
-        query.setMaxResults(5);
+        query.setFirstResult((page - 1) * 20);
+        query.setMaxResults(20);
         List<T> list = query.list();
         return list;
     }

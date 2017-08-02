@@ -90,21 +90,23 @@
             <p class="p-news"><%=listn.get(0).getSummary()%>
             </p><a href="<%=path%>/news/<%=listn.get(0).getId()%>">更多&gt;&gt;</a>
         </div>
-        <div class="col-xs-3" ><img src="image\news\2.jpg">
+        <div class="col-xs-3" >
+            <img src="image\news\2.jpg">
             <h3 class="h-news"><%=listn.get(1).getTitle()%>
             </h3>
             <p class="p-news"><%=listn.get(1).getSummary()%>
             </p><a href="<%=path%>/news/<%=listn.get(1).getId()%>">更多&gt;&gt;</a>
         </div>
-        <div class="col-xs-3" ><img src="image\news\3.jpg">
+        <div class="col-xs-3" >
+            <img src="image\news\3.jpg">
             <h3 class="h-news"><%=listn.get(2).getTitle()%>
             </h3>
             <p class="p-news"><%=listn.get(2).getSummary()%>
             </p><a href="<%=path%>/news/<%=listn.get(2).getId()%>">更多&gt;&gt;</a>
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-3">
             <h3 >其他相关新闻</h3>
-            <ul style="margin-right: 30px">
+            <ul >
                 <li><a href="<%=path%>/news/<%=listn.get(3).getId()%>"><%=listn.get(3).getTitle()%>
                 </a></li>
                 <li><a href="<%=path%>/news/<%=listn.get(4).getId()%>"><%=listn.get(4).getTitle()%>
@@ -155,7 +157,7 @@
                     <p><%=listd.get(1).getTitle()%><a href="<%=path%>/document/<%=listd.get(1).getId()%>">    更多&gt;&gt;</a></p>
                 </div>
             </div>
-            <p><a href="<%=path%>/document">更多&gt;&gt;</a></p>
+            <p style="margin-top: 10px"><a href="<%=path%>/document">更多&gt;&gt;</a></p>
         </div>
     </div>
     <div class="row">

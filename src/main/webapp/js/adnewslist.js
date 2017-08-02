@@ -5,9 +5,6 @@ function pageFunc(page){
     $('#page').val(page);
     $('#newsPageFrom').submit();
 }
-function updateItem() {
-    
-}
 function deleteItem(id) {
     //发送post请求
     $.post(

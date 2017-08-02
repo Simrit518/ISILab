@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
     <meta name="author" content="liuzhen">
     <link rel="icon" href="<%=path%>/image/logo.jpg">
     <title>智能交互与感知实验室</title>

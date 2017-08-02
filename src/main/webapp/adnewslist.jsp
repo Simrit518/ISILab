@@ -164,7 +164,8 @@
                                     </td>
                                     <td>
                                         <div class="btn-group">
-                                            <button id="delete" class="btn btn-xs btn-danger" onclick="deleteItem(<%=n.getId()%>)">
+                                            <button id="delete" class="btn btn-xs btn-danger"
+                                                    onclick="deleteItem(<%=n.getId()%>)">
                                                 <i class="icon-trash bigger-120"></i>
                                             </button>
                                         </div>
@@ -173,39 +174,54 @@
                                 <%}%>
                                 </tbody>
                             </table>
-
-                            <%--<!-- 翻页 -->--%>
-                            <%--<input name="page" id="page" type="hidden" value="1"/>--%>
-                            <%--<nav aria-label="Page navigation">--%>
-                                <%--<ul class="pagination">--%>
-                                    <%--<li--%>
-                                            <%--<%if (currentPage == 1) { %>--%>
-                                            <%--class="disabled"--%>
-                                            <%--<%} %>>--%>
-                                        <%--<a href="javascript:pageFunc(1)" aria-label="Previous">--%>
-                                            <%--<span aria-hidden="true">&laquo;</span>--%>
-                                        <%--</a>--%>
-                                    <%--</li>--%>
-                                    <%--<%--%>
-                                        <%--for (int i = 0; i < pageTotal; i++) {--%>
-                                    <%--%>--%>
-                                    <%--<li<%if (currentPage == i + 1) { %>--%>
-                                            <%--class="active"--%>
-                                            <%--<%} %>><a href="javascript:pageFunc(<%=i+1%>)"><%=i + 1 %>--%>
-                                    <%--</a></li>--%>
-                                    <%--<%--%>
-                                        <%--}--%>
-                                    <%--%>--%>
-                                    <%--<li<%if (currentPage == pageTotal) { %>--%>
-                                            <%--class="disabled"--%>
-                                            <%--<%} %>>--%>
-                                        <%--<a href="javascript:pageFunc(<%=pageTotal%>)" aria-label="Next">--%>
-                                            <%--<span aria-hidden="true">&raquo;</span>--%>
-                                        <%--</a>--%>
-                                    <%--</li>--%>
-                                <%--</ul>--%>
-                            <%--</nav>--%>
-                            <%--<!-- 翻页结束 -->--%>
+                            <!-- 翻页 -->
+                            <%--<div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">--%>
+                            <%--<ul class="pagination">--%>
+                            <%--<li class="paginate_button previous disabled" aria-controls="dynamic-table"--%>
+                            <%--tabindex="0" id="dynamic-table_previous"><a href="#">Previous</a></li>--%>
+                            <%--<li class="paginate_button active" aria-controls="dynamic-table" tabindex="0"><a--%>
+                            <%--href="#">1</a></li>--%>
+                            <%--<li class="paginate_button " aria-controls="dynamic-table" tabindex="0"><a href="#">2</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="paginate_button " aria-controls="dynamic-table" tabindex="0"><a href="#">3</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="paginate_button next" aria-controls="dynamic-table" tabindex="0"--%>
+                            <%--id="dynamic-table_next"><a href="#">Next</a></li>--%>
+                            <%--</ul>--%>
+                            <%--</div>--%>
+                            <!-- 翻页 -->
+                            <!-- 翻页 -->
+                            <input name="page" id="page" type="hidden" value="1"/>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li
+                                            <%if (currentPage == 1) { %>
+                                            class="disabled"
+                                            <%} %>>
+                                        <button class="btn btn-primary" onclick="pageFunc(1)"  aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </button>
+                                    </li>
+                                    <%
+                                        for (int i = 0; i < pageTotal; i++) {
+                                    %>
+                                    <li<%if (currentPage == i + 1) { %>
+                                            class="active"
+                                            <%} %>><button class="btn btn-primary" onclick="pageFunc(<%=i+1%>)" ><%=i + 1 %>
+                                    </button></li>
+                                    <%
+                                        }
+                                    %>
+                                    <li<%if (currentPage == pageTotal) { %>
+                                            class="disabled"
+                                            <%} %>>
+                                        <button class="btn btn-primary" onclick="pageFunc(<%=pageTotal%>)"  aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!-- 翻页结束 -->
                         </form>
                     </div><!-- /span -->
                 </div>
@@ -218,6 +234,9 @@
     <!-- /.main-container-inner -->
 </div>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js "></script>
+<script>
+    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js "><\/script>')
+</script>
 <script src="js/adnewslist.js "></script>
 <script src="js/bootstrap.js"></script>
 </body>

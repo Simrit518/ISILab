@@ -47,9 +47,9 @@ public class NewsBizImpl implements NewsBiz {
         if (list==null||list.size()==1)
             return 1;
         long temp=list.size();
-        if (temp%5!=0||temp==0)
-            return temp/5+1;
-        return temp/5;
+        if (temp%20!=0||temp==0)
+            return temp/20+1;
+        return temp/20;
     }
     @Transactional
     public List<NewsEntity> getNewsByPage(int page){

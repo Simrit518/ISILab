@@ -57,4 +57,11 @@ public class UserAction {
     public String admin() {
             return "login";
     }
+
+    @RequestMapping(value="/logout")
+    public String logout(
+            HttpSession httpSession){
+        httpSession.removeAttribute("user");
+        return "login";
+    }
 }

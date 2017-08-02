@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*,com.isilab.entity.*"
-         pageEncoding="utf-8"%>
+         pageEncoding="utf-8" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -11,25 +11,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>后台管理系统</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- basic styles -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
     <!--[if IE 7]>
-    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css"/>
     <![endif]-->
     <!-- page specific plugin styles -->
-    <link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.custom.min.css"/>
     <!-- fonts -->
-    <link rel="stylesheet" href="assets\css\cyrillic.css" />
+    <link rel="stylesheet" href="assets\css\cyrillic.css"/>
     <!-- ace styles -->
-    <link rel="stylesheet" href="assets/css/ace.min.css" />
-    <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css"/>
     <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css"/>
     <![endif]-->
     <!-- inline styles related to this page -->
     <!-- ace settings handler -->
@@ -44,7 +44,10 @@
 <body>
 <div class="navbar navbar-default" id="navbar">
     <script type="text/javascript">
-        try { ace.settings.check('navbar', 'fixed') } catch (e) {}
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {
+        }
     </script>
     <div class="navbar-container" id="navbar-container">
         <div class="navbar-header pull-left">
@@ -64,7 +67,10 @@
 </div>
 <div class="main-container" id="main-container">
     <script type="text/javascript">
-        try { ace.settings.check('main-container', 'fixed') } catch (e) {}
+        try {
+            ace.settings.check('main-container', 'fixed')
+        } catch (e) {
+        }
     </script>
     <div class="main-container-inner">
         <a class="menu-toggler" id="menu-toggler" href="#">
@@ -72,13 +78,18 @@
         </a>
         <div class="sidebar" id="sidebar">
             <script type="text/javascript">
-                try { ace.settings.check('sidebar', 'fixed') } catch (e) {}
+                try {
+                    ace.settings.check('sidebar', 'fixed')
+                } catch (e) {
+                }
             </script>
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
                 <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                    <button class="btn btn-danger" style="width: 100%">
-                        <i class="icon-power-off"></i>
-                    </button>
+                    <form action="logout">
+                        <button class="btn btn-danger" style="width: 100%">
+                            <i class="icon-power-off"></i>
+                        </button>
+                    </form>
                 </div>
                 <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
                     <span class="btn btn-success"></span>
@@ -122,10 +133,14 @@
             </ul>
             <!-- /.nav-list -->
             <div class="sidebar-collapse" id="sidebar-collapse">
-                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
+                   data-icon2="icon-double-angle-right"></i>
             </div>
             <script type="text/javascript">
-                try { ace.settings.check('sidebar', 'collapsed') } catch (e) {}
+                try {
+                    ace.settings.check('sidebar', 'collapsed')
+                } catch (e) {
+                }
             </script>
         </div>
         <div class="main-content">
@@ -152,27 +167,29 @@
                             </select></h4>
                             <div class="wysiwyg-editor" id="editor1"></div>
                             <input id="content" type="text" name="content" class="hidden">
-                            <button id="mybutton" class="btn btn-large btn-success"  style="margin-top: 10px" type="button" onclick="newsAddFunc()">发布</button>
+                            <button id="mybutton" class="btn btn-large btn-success" style="margin-top: 10px"
+                                    type="button" onclick="newsAddFunc()">发布
+                            </button>
                         </form>
                         <script type="text/javascript">
-                            function newsAddFunc(){
+                            function newsAddFunc() {
                                 $('#content').val($('#editor1').html());
                                 var title = $('#title').val();
-                                var summary=$('#summary').val();
+                                var summary = $('#summary').val();
                                 var content = $('#content').val();
-                                var kind=$('#kind').val();
+                                var kind = $('#kind').val();
                                 //发送post请求
                                 $.post(
                                     'newsAdd',
                                     {
-                                        title:title,
-                                        summary:summary,
-                                        content:content,
-                                        kind:kind
+                                        title: title,
+                                        summary: summary,
+                                        content: content,
+                                        kind: kind
                                     },
-                                    function(data,status){
-                                        if(status=="success"){
-                                            alert("发布成功" );
+                                    function (data, status) {
+                                        if (status == "success") {
+                                            alert("发布成功");
                                         }
                                         else {
                                             alert("发布失败");
@@ -215,7 +232,7 @@
 <!-- <![endif]-->
 <!--[if IE]>
 <script type="text/javascript">
-    window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
 </script>
 <![endif]-->
 <script type="text/javascript">
@@ -236,11 +253,13 @@
 <script src="assets/js/ace.min.js"></script>
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
-    jQuery(function($) {
+    jQuery(function ($) {
 
         function showErrorAlert(reason, detail) {
             var msg = '';
-            if (reason === 'unsupported-file-type') { msg = "Unsupported format " + detail; } else {
+            if (reason === 'unsupported-file-type') {
+                msg = "Unsupported format " + detail;
+            } else {
                 console.log("error uploading file", reason, detail);
             }
             $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>' +
@@ -250,7 +269,7 @@
         $('#editor1').ace_wysiwyg();//this will create the default editor will all buttons
 
 
-        $('[data-toggle="buttons"] .btn').on('click', function(e) {
+        $('[data-toggle="buttons"] .btn').on('click', function (e) {
             var target = $(this).find('input[type=radio]');
             var which = parseInt(target.val());
             var toolbar = $('#editor1').prev().get(0);
@@ -260,8 +279,6 @@
                 else if (which == 2) $(toolbar).addClass('wysiwyg-style2');
             }
         });
-
-
 
 
         //Add Image Resize Functionality to Chrome and Safari
@@ -279,9 +296,9 @@
                 lastResizableImg = null;
             }
 
-            var enableImageResize = function() {
+            var enableImageResize = function () {
                 $('.wysiwyg-editor')
-                    .on('mousedown', function(e) {
+                    .on('mousedown', function (e) {
                         var target = $(e.target);
                         if (e.target instanceof HTMLImageElement) {
                             if (!target.data('resizable')) {
@@ -298,12 +315,12 @@
                             }
                         }
                     })
-                    .on('click', function(e) {
+                    .on('click', function (e) {
                         if (lastResizableImg != null && !(e.target instanceof HTMLImageElement)) {
                             destroyResizable();
                         }
                     })
-                    .on('keydown', function() {
+                    .on('keydown', function () {
                         destroyResizable();
                     });
             }
@@ -330,7 +347,7 @@
 </script>
 <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
         var hm = document.createElement("script");
         hm.src = "//hm.baidu.com/hm.js?a43c39da34531f4da694d4499c5614d4";
         var s = document.getElementsByTagName("script")[0];
