@@ -151,6 +151,7 @@
                                 <thead>
                                 <tr>
                                     <th>新闻标题</th>
+                                    <th>发布日期</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
@@ -162,6 +163,7 @@
                                         <a href="<%=path%>/news/<%=n.getId()%>"><%=n.getTitle()%>
                                         </a>
                                     </td>
+                                    <td><%=n.getDate()%></td>
                                     <td>
                                         <div class="btn-group">
                                             <button id="delete" class="btn btn-xs btn-danger"
@@ -174,22 +176,7 @@
                                 <%}%>
                                 </tbody>
                             </table>
-                            <!-- 翻页 -->
-                            <%--<div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">--%>
-                            <%--<ul class="pagination">--%>
-                            <%--<li class="paginate_button previous disabled" aria-controls="dynamic-table"--%>
-                            <%--tabindex="0" id="dynamic-table_previous"><a href="#">Previous</a></li>--%>
-                            <%--<li class="paginate_button active" aria-controls="dynamic-table" tabindex="0"><a--%>
-                            <%--href="#">1</a></li>--%>
-                            <%--<li class="paginate_button " aria-controls="dynamic-table" tabindex="0"><a href="#">2</a>--%>
-                            <%--</li>--%>
-                            <%--<li class="paginate_button " aria-controls="dynamic-table" tabindex="0"><a href="#">3</a>--%>
-                            <%--</li>--%>
-                            <%--<li class="paginate_button next" aria-controls="dynamic-table" tabindex="0"--%>
-                            <%--id="dynamic-table_next"><a href="#">Next</a></li>--%>
-                            <%--</ul>--%>
-                            <%--</div>--%>
-                            <!-- 翻页 -->
+
                             <!-- 翻页 -->
                             <input name="page" id="page" type="hidden" value="1"/>
                             <nav aria-label="Page navigation">

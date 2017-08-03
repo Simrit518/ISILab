@@ -13,7 +13,7 @@
 <%@ include file="WEB-INF/navbar.jsp" %>
 <!--导航栏结束 -->
 <!-- 主容器 -->
-<div class="container">
+<div class="news-content container">
     <div class="row" style="margin-top: 30px">
         <p>
             <font size="5px" color="#673566">Document</font>

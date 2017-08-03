@@ -13,7 +13,7 @@
 <%@ include file="WEB-INF/navbar.jsp" %>
 <!--导航栏结束 -->
 <!-- 主容器 -->
-<div class="container">
+<div class="news-content container">
     <%AcademicsEntity academics=(AcademicsEntity) request.getAttribute("academics");%>
     <div class="row" style="margin-top: 30px">
         <div class="row" style="text-align: center">

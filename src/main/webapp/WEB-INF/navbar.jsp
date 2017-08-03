@@ -15,7 +15,7 @@
         <div class="col-xs-2 col-xs-offset-7" style="margin-top: 35px">
             <div class="row">中文|English</div>
             <div class="row">
-                <p style="color: #be87be">登录</p>
+                <p style="color: #be87be"><a href="<%=path%>/adminlogin">登录</a></p>
             </div>
         </div>
     </div>
@@ -30,14 +30,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://localhost:8080/ISILab">主页</a>
+            <a class="navbar-brand" href="<%=path%>">主页</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="<%=path%>/news">新闻公告</a></li>
                 <li><a href="#about">实验室概况</a></li>
-                <li><a href="#contact">科学研究</a></li>
+                <li><a href="<%=path%>/academics">科学研究</a></li>
                 <li><a href="#about">课程教学</a></li>
                 <li><a href="#about">科研人员</a></li>
                 <li><a href="#about">活动</a></li>
