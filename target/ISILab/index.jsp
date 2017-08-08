@@ -84,21 +84,21 @@
             List<DocumentEntity> listd=(List<DocumentEntity>) request.getAttribute("documentlist");
         %>
         <div class="col-xs-3">
-            <img src="image\news\1.jpg">
+            <img src="image\news\1.jpg" class="img-responsive">
             <h3 class="h-news"><%=listn.get(0).getTitle()%>
             </h3>
             <p class="p-news"><%=listn.get(0).getSummary()%>
             </p><a href="<%=path%>/news/<%=listn.get(0).getId()%>">更多&gt;&gt;</a>
         </div>
         <div class="col-xs-3" >
-            <img src="image\news\2.jpg">
+            <img src="image\news\2.jpg" class="img-responsive">
             <h3 class="h-news"><%=listn.get(1).getTitle()%>
             </h3>
             <p class="p-news"><%=listn.get(1).getSummary()%>
             </p><a href="<%=path%>/news/<%=listn.get(1).getId()%>">更多&gt;&gt;</a>
         </div>
         <div class="col-xs-3" >
-            <img src="image\news\3.jpg">
+            <img src="image\news\3.jpg" class="img-responsive">
             <h3 class="h-news"><%=listn.get(2).getTitle()%>
             </h3>
             <p class="p-news"><%=listn.get(2).getSummary()%>
@@ -146,13 +146,13 @@
             </p>
             <hr style="height:2px;border:none;border-top:2px ridge #CCCCCC;margin-top:-10px"/>
             <div class="row">
-                <div class="col-xs-3"><img src="image\literature\1.jpg" style="width: 100px;height: 80px"></div>
+                <div class="col-xs-3"><img src="image\literature\1.jpg" style="width: 100px;height: 80px" class="img-responsive"></div>
                 <div class="col-xs-8 col-xs-offset-1">
                     <p><%=listd.get(0).getTitle()%><a href="<%=path%>/document/<%=listd.get(0).getId()%>">    更多&gt;&gt;</a></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-3"><img src="image\literature\2.jpg" style="width: 100px;height: 80px"></div>
+                <div class="col-xs-3"><img src="image\literature\2.jpg" style="width: 100px;height: 80px" class="img-responsive"></div>
                 <div class="col-xs-8 col-xs-offset-1">
                     <p><%=listd.get(1).getTitle()%><a href="<%=path%>/document/<%=listd.get(1).getId()%>">    更多&gt;&gt;</a></p>
                 </div>
@@ -166,21 +166,21 @@
             <font size="3px">视频</font>
         </p>
         <hr style="height:2px;border:none;border-top:2px ridge #CCCCCC;margin-top:-10px"/>
-        <div class="col-xs-4">
+        <div class="col-xs-5">
             <video width="320" height="240" controls>
                 <source src="video\movie1.mp4" type="video/mp4">
-                <source src="video\movie1.ogg" type="video/ogg">
+                <source src="video\movie1.ogg" type="video/ogg" class="responsive">
                 您的浏览器不支持 HTML5 video 标签。
             </video>
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-5">
             <video width="320" height="240" controls>
                 <source src="video\movie1.mp4" type="video/mp4">
-                <source src="video\movie1.ogg" type="video/ogg">
+                <source src="video\movie1.ogg" type="video/ogg" class="responsive">
                 您的浏览器不支持 HTML5 video 标签。
             </video>
         </div>
-        <div class="col-xs-4"><a href="#">更多&gt;&gt;</a></div>
+        <div class="col-xs-2"><a href="#">更多&gt;&gt;</a></div>
     </div>
     <div class="row" style="text-align: center; margin-top: 30px">
         <div class="col-xs-8 col-xs-offset-2">
@@ -193,7 +193,7 @@
             <hr style="height:2px;border:none;border-top:2px ridge #CCCCCC;margin-top:-10px"/>
             <div class="col-xs-2"></div>
         </div>
-        <img src="image\customers.jpg">
+        <img src="image\customers.jpg" class="img-responsive">
     </div>
     <div class=" row " style="text-align: center; margin-top: 30px">
         <p>

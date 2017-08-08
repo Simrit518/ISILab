@@ -4,12 +4,12 @@
     <div style="background: #CBCBCB;">
         <div class="container">
             <div style="background:#CBCBCB ">
-                <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="col-xs-6 col-sm-3 col-md-3">
                     <a href="">
                         <img class="img-responsive" src="<%=path%>/image/nklogo.png" style="margin-top: 10px"/>
                     </a>
                 </div>
-                <div class="col-xs-12 col-sm-9 col-md-9">
+                <div class="col-xs-6 col-sm-9 col-md-9">
                     <div style="background: #CBCBCB;text-align: right;line-height: 24px;color: #FFFFFF;margin-top:10px;padding: 20px 0px;">
                         <p><a href="">关于实验室</a>&nbsp;&nbsp;&nbsp;<a href="">南开大学</a>&nbsp;&nbsp;&nbsp;<a
                                 href="">计算机与控制工程学院</a>&nbsp;&nbsp;&nbsp;<a
