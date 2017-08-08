@@ -17,13 +17,8 @@
     <!-- basic styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
-    <!--[if IE 7]>
-    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css"/>
-    <![endif]-->
     <!-- page specific plugin styles -->
     <link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.custom.min.css"/>
-    <!-- fonts -->
-    <link rel="stylesheet" href="assets\css\cyrillic.css"/>
     <!-- ace styles -->
     <link rel="stylesheet" href="assets/css/ace.min.css"/>
     <link rel="stylesheet" href="assets/css/ace-rtl.min.css"/>
@@ -76,73 +71,7 @@
         <a class="menu-toggler" id="menu-toggler" href="#">
             <span class="menu-text"></span>
         </a>
-        <div class="sidebar" id="sidebar">
-            <script type="text/javascript">
-                try {
-                    ace.settings.check('sidebar', 'fixed')
-                } catch (e) {
-                }
-            </script>
-            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-                <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                    <form action="logout">
-                        <button class="btn btn-danger" style="width: 100%">
-                            <i class="icon-power-off"></i>
-                        </button>
-                    </form>
-                </div>
-                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-                    <span class="btn btn-success"></span>
-                    <span class="btn btn-info"></span>
-                    <span class="btn btn-warning"></span>
-                    <span class="btn btn-danger"></span>
-                </div>
-            </div>
-            <!-- #sidebar-shortcuts -->
-            <ul class="nav nav-list">
-                <li class="active">
-                    <a href="index.html">
-                        <i class="icon-edit"></i>
-                        <span class="menu-text"> 发布内容 </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<%=path%>/adminnews">
-                        <i class="icon-list"></i>
-                        <span class="menu-text"> 新闻 </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="icon-tag"></i>
-                        <span class="menu-text"> 学术研究 </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="icon-desktop"></i>
-                        <span class="menu-text"> 成果展示 </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="icon-file"></i>
-                        <span class="menu-text"> 学术文献 </span>
-                    </a>
-                </li>
-            </ul>
-            <!-- /.nav-list -->
-            <div class="sidebar-collapse" id="sidebar-collapse">
-                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
-                   data-icon2="icon-double-angle-right"></i>
-            </div>
-            <script type="text/javascript">
-                try {
-                    ace.settings.check('sidebar', 'collapsed')
-                } catch (e) {
-                }
-            </script>
-        </div>
+        <%@ include file="WEB-INF/sliderbar.jsp" %>
         <div class="main-content">
             <div class="page-content">
                 <div class="page-header">
@@ -326,34 +255,9 @@
             }
 
             enableImageResize();
-
-            /**
-             //or we can load the jQuery UI dynamically only if needed
-             if (typeof jQuery.ui !== 'undefined') enableImageResize();
-             else {//load jQuery UI if not loaded
-            	$.getScript($path_assets+"/js/jquery-ui-1.10.3.custom.min.js", function(data, textStatus, jqxhr) {
-            		if('ontouchend' in document) {//also load touch-punch for touch devices
-            			$.getScript($path_assets+"/js/jquery.ui.touch-punch.min.js", function(data, textStatus, jqxhr) {
-            				enableImageResize();
-            			});
-            		} else	enableImageResize();
-            	});
-            }
-             */
         }
-
-
     });
 </script>
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?a43c39da34531f4da694d4499c5614d4";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-</body>
 
+</body>
 </html>

@@ -2,13 +2,11 @@ package com.isilab.action;
 
 import com.isilab.biz.AcademicsBiz;
 import com.isilab.entity.AcademicsEntity;
+import com.isilab.tool.TypeTool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,9 +41,10 @@ public class AcademicsAction {
         model.addAttribute("academics", academics);
         return "academics";
     }
-    @RequestMapping(value = "/academicsDelete", method = RequestMethod.POST)
+    @RequestMapping(value = "/acaDelete", method = RequestMethod.POST)
+    @ResponseBody
     public String academicsDelete(@RequestParam int id) {
         academicsBiz.deleteAcademics(id);
-        return "test";
+        return TypeTool.CODE_RETURN.get(1).toString();
     }
 }
