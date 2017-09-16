@@ -86,7 +86,7 @@
                                 <%for (DocumentEntity n : list) {%>
                                 <tr>
                                     <td>
-                                        <a href="<%=path%>/news/<%=n.getId()%>"><%=n.getTitle()%>
+                                        <a href="<%=path%>/document/<%=n.getId()%>"><%=n.getTitle()%>
                                         </a>
                                     </td>
                                     <td><%=n.getDate()%></td>

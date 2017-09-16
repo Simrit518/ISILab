@@ -33,7 +33,9 @@ public class AdminAction {
     private ResultBiz resultBiz;
     @Autowired
     private DocumentBiz documentBiz;
-
+    /**
+     * 后台管理主页
+     */
     @RequestMapping(value = "/admin")
     public String admin(HttpSession httpSession,ModelMap modelMap) {
         if (!LoginTool.isLogin(httpSession))
@@ -42,7 +44,9 @@ public class AdminAction {
             modelMap.addAttribute("sliderBarNum", ParameterTool.JSP_ADMIN);
         return "admin";
     }
-
+    /**
+     * 发布内容
+     */
     @RequestMapping(value = "/newsAdd", method = RequestMethod.POST)
     public String newsPublish(
             @RequestParam String title,
@@ -69,6 +73,9 @@ public class AdminAction {
         return "test";
     }
 
+    /**
+     * 新闻管理列表
+     */
     @RequestMapping(value = "/adnews", produces = "text/html;charset=UTF-8")
     public String adminnews(
             @RequestParam(name = "page", defaultValue = "1") int page,
@@ -88,7 +95,9 @@ public class AdminAction {
         modelMap.addAttribute("sliderBarNum",ParameterTool.JSP_ADNEWS);
         return "adnews";
     }
-
+    /**
+     * 学术研究管理列表
+     */
     @RequestMapping(value = "/adaca", produces = "text/html;charset=UTF-8")
     public String adaca(
             @RequestParam(name = "page", defaultValue = "1") int page,
@@ -108,7 +117,9 @@ public class AdminAction {
         modelMap.addAttribute("sliderBarNum",ParameterTool.JSP_ADACA);
         return "adaca";
     }
-
+    /**
+     * 成果展示管理列表
+     */
     @RequestMapping(value = "/adres", produces = "text/html;charset=UTF-8")
     public String adres(
             @RequestParam(name = "page", defaultValue = "1") int page,
@@ -128,7 +139,9 @@ public class AdminAction {
         modelMap.addAttribute("sliderBarNum",ParameterTool.JSP_ADRES);
         return "adres";
     }
-
+    /**
+     * 学术文献管理列表
+     */
     @RequestMapping(value = "/addoc", produces = "text/html;charset=UTF-8")
     public String addoc(
             @RequestParam(name = "page", defaultValue = "1") int page,

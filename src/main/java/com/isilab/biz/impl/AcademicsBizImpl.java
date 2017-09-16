@@ -46,6 +46,7 @@ public class AcademicsBizImpl implements AcademicsBiz {
             return temp/20+1;
         return temp/20;
     }
+    //page：当前页
     @Transactional
     public List<AcademicsEntity> getAcademicsByPage(int page){
         long count =pageCount();

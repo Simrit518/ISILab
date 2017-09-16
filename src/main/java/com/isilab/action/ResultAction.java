@@ -17,6 +17,9 @@ import java.util.List;
 public class ResultAction {
     @Autowired
     private ResultBiz resultBiz;
+    /**
+     * 显示成果展示列表
+     */
     @RequestMapping(value = "/result", produces = "text/html;charset=UTF-8")
     public String resultshow(
             @RequestParam(name = "page", defaultValue = "1") int page,
@@ -32,6 +35,9 @@ public class ResultAction {
         modelMap.addAttribute("pageTotal", temp);
         return "reslist";
     }
+    /**
+     * 显示成果展示详情
+     */
     @RequestMapping(value = "/result/{id}", method = RequestMethod.GET)
     public String getResult(
             @PathVariable(name = "id") int id,
@@ -41,6 +47,9 @@ public class ResultAction {
         model.addAttribute("result", result);
         return "result";
     }
+    /**
+     * 删除成果展示
+     */
     @RequestMapping(value = "/resDelete", method = RequestMethod.POST)
     @ResponseBody
     public String resultDelete(@RequestParam int id) {

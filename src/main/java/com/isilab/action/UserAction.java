@@ -22,6 +22,9 @@ import javax.servlet.http.HttpSession;
 public class UserAction {
     @Autowired
     private UserBiz userBiz;
+    /**
+     * 后台管理系统登录
+     */
     @RequestMapping(value="/login", method= RequestMethod.POST)
     public String login(
             @RequestParam(name="usn")String usn,
@@ -52,12 +55,13 @@ public class UserAction {
             return "redirect:/admin";
         }
     }
-
     @RequestMapping(value = "/adminlogin")
     public String admin() {
             return "login";
     }
-
+    /**
+     * 后台管理系统退出登录
+     */
     @RequestMapping(value="/logout")
     public String logout(
             HttpSession httpSession){

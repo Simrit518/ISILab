@@ -17,6 +17,9 @@ import java.util.List;
 public class AcademicsAction {
     @Autowired
     private AcademicsBiz academicsBiz;
+    /**
+     * 显示学术研究列表
+     */
     @RequestMapping(value = "/academics", produces = "text/html;charset=UTF-8")
     public String academicsshow(
             @RequestParam(name = "page", defaultValue = "1") int page,
@@ -32,6 +35,9 @@ public class AcademicsAction {
         modelMap.addAttribute("pageTotal", temp);
         return "acalist";
     }
+    /**
+     * 显示学术研究详情
+     */
     @RequestMapping(value = "/academics/{id}", method = RequestMethod.GET)
     public String getAcademics(
             @PathVariable(name = "id") int id,
@@ -41,6 +47,9 @@ public class AcademicsAction {
         model.addAttribute("academics", academics);
         return "academics";
     }
+    /**
+     * 删除学术研究
+     */
     @RequestMapping(value = "/acaDelete", method = RequestMethod.POST)
     @ResponseBody
     public String academicsDelete(@RequestParam int id) {

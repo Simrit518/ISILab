@@ -86,7 +86,7 @@
                                 <%for (ResultEntity n : list) {%>
                                 <tr>
                                     <td>
-                                        <a href="<%=path%>/news/<%=n.getId()%>"><%=n.getTitle()%>
+                                        <a href="<%=path%>/result/<%=n.getId()%>"><%=n.getTitle()%>
                                         </a>
                                     </td>
                                     <td><%=n.getDate()%></td>

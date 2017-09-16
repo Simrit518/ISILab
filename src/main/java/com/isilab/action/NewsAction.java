@@ -17,6 +17,9 @@ import java.util.List;
 public class NewsAction {
     @Autowired
     private NewsBiz newsBiz;
+    /**
+     * 显示新闻列表
+     */
     @RequestMapping(value = "/news", produces = "text/html;charset=UTF-8")
     public String newsshow(
             @RequestParam(name = "page", defaultValue = "1") int page,
@@ -34,6 +37,9 @@ public class NewsAction {
         modelMap.addAttribute("pageTotal", temp);
         return "newslist";
     }
+    /**
+     * 显示新闻详情
+     */
     @RequestMapping(value = "/news/{id}", method = RequestMethod.GET)
     public String getNews(
             @PathVariable(name = "id") int id,
@@ -43,6 +49,9 @@ public class NewsAction {
         model.addAttribute("news", news);
         return "news";
     }
+    /**
+     * 删除新闻
+     */
     @RequestMapping(value = "/newsDelete", method = RequestMethod.POST)
     @ResponseBody
     public String newsDelete(@RequestParam int id) {

@@ -30,7 +30,9 @@ public class MainAction {
     private ResultBiz resultBiz;
     @Autowired
     private DocumentBiz documentBiz;
-
+    /**
+     * 主页内容渲染
+     */
     @RequestMapping(value = "", produces = "text/html;charset=UTF-8")
     public String init(ModelMap modelMap) {
         modelMap.addAttribute("newslist", newsBiz.getLatestNews(6));

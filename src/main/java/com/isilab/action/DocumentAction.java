@@ -17,6 +17,9 @@ import java.util.List;
 public class DocumentAction {
     @Autowired
     private DocumentBiz documentBiz;
+    /**
+     * 显示学术文献列表
+     */
     @RequestMapping(value = "/document", produces = "text/html;charset=UTF-8")
     public String documentshow(
             @RequestParam(name = "page", defaultValue = "1") int page,
@@ -32,6 +35,9 @@ public class DocumentAction {
         modelMap.addAttribute("pageTotal", temp);
         return "doclist";
     }
+    /**
+     * 显示学术文献详情
+     */
     @RequestMapping(value = "/document/{id}", method = RequestMethod.GET)
     public String getDocument(
             @PathVariable(name = "id") int id,
@@ -41,6 +47,9 @@ public class DocumentAction {
         model.addAttribute("document", document);
         return "document";
     }
+    /**
+     * 删除学术文献
+     */
     @RequestMapping(value = "/docDelete", method = RequestMethod.POST)
     @ResponseBody
     public String documentDelete(@RequestParam int id) {
