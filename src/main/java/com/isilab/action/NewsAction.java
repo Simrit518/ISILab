@@ -2,12 +2,12 @@ package com.isilab.action;
 
 import com.isilab.biz.NewsBiz;
 import com.isilab.entity.NewsEntity;
-import com.isilab.tool.TypeTool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -56,6 +56,37 @@ public class NewsAction {
     @ResponseBody
     public String newsDelete(@RequestParam int id) {
         newsBiz.deleteNews(id);
-        return TypeTool.CODE_RETURN.get(1).toString();
+        return "success";
+    }
+    /**
+     * 跳转到修改新闻页面
+     */
+    @RequestMapping(value = "/newsUpdatePage")
+    public String newsUpdatePage(@RequestParam int id,ModelMap modelMap) {
+        NewsEntity newsEntity=newsBiz.getNews(id);
+        modelMap.addAttribute("id",id);
+        modelMap.addAttribute("newsEntity",newsEntity);
+        modelMap.addAttribute("sliderBarNum",0);
+        return "update";
+    }
+    /**
+     * 修改新闻
+     */
+    @RequestMapping(value = "/newsUpdate", method = RequestMethod.POST)
+    @ResponseBody
+    public String newsUpdate(@RequestParam int id,
+                             @RequestParam String title,
+                             @RequestParam String summary,
+                             @RequestParam String content,
+                             @RequestParam String kind) {
+        NewsEntity newsEntity=newsBiz.getNews(id);
+        newsEntity.setTitle(title);
+        newsEntity.setSummary(summary);
+        newsEntity.setContent(content);
+        newsEntity.setKind(kind);
+        if (newsBiz.updateNews(newsEntity))
+            return "success";
+        else
+            return "fail";
     }
 }

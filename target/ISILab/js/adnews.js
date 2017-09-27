@@ -1,8 +1,15 @@
 function pageFunc(page){
     $('#page').val(page);
-    $('#newsPageFrom').submit();
+    $('#newsPageForm').submit();
 }
-
+function updateModelShow(id){
+    var id=id;
+    $('#updatenewsid').val(id);
+    $('#updateModel').modal('show');
+}
+function updateConfirm(){
+    $('#updateForm').submit();
+}
 
 function deleteItem(id) {
     //发送post请求
@@ -12,12 +19,31 @@ function deleteItem(id) {
             id:id
         },
         function(data,status){
-            if(data==MSG_SUCCESS){
-                alert("删除成功" );
+            if(data=='success'&&status=='success'){
+                location.reload();
             }
-            else if(data==MSG_FAILED){
+            else {
                 alert("删除失败");
             }
         }
     );
 }
+/*function deleteItem() {
+    $('#deleteModal').modal('hide');
+    var id=$('#newsid').html();
+    //发送post请求
+    $.post(
+        'newsDelete',
+        {
+            id:id
+        },
+        function(data,status){
+            if(data=='success'&&status=='success'){
+                location.reload();
+            }
+            else {
+                alert("删除失败");
+            }
+        }
+    );
+}*/

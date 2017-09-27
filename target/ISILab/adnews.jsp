@@ -67,7 +67,7 @@
                 <!-- 表格 -->
                 <div class="row">
                     <div class="col-xs-12">
-                        <form action="adnews" id="newsPageForm">
+
                             <%
                                 List<NewsEntity> list = (List<NewsEntity>) request.getAttribute("newslist");
                                 int currentPage = (Integer) request.getAttribute("page");//当前页
@@ -92,9 +92,13 @@
                                     <td><%=n.getDate()%></td>
                                     <td>
                                         <div class="btn-group">
-                                            <button id="delete" class="btn btn-xs btn-danger"
-                                                    onclick="deleteItem(<%=n.getId()%>)">
+                                            <button type="button" class="btn btn-xs btn-danger"
+                                                    onclick="deleteItem(<%=n.getId()%>)" >
                                                 <i class="icon-trash bigger-120"></i>
+                                            </button>
+                                            <button id="update" class="btn btn-xs btn-primary"
+                                                    onclick="updateModelShow(<%=n.getId()%>)">
+                                                <i class="icon-pencil bigger-120"></i>
                                             </button>
                                         </div>
                                     </td>
@@ -102,7 +106,7 @@
                                 <%}%>
                                 </tbody>
                             </table>
-
+                        <form action="adnews" id="newsPageForm">
                             <!-- 翻页 -->
                             <input name="page" id="page" type="hidden" value="1"/>
                             <nav aria-label="Page navigation">
@@ -111,7 +115,7 @@
                                             <%if (currentPage == 1) { %>
                                             class="disabled"
                                             <%} %>>
-                                        <button class="btn btn-xs btn-primary" onclick="pageFunc(1)"  aria-label="Previous">
+                                        <button class="btn btn-xs btn-primary "  onclick="pageFunc(1)"  aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                         </button>
                                     </li>
@@ -135,6 +139,7 @@
                                 </ul>
                             </nav>
                             <!-- 翻页结束 -->
+
                         </form>
                     </div><!-- /span -->
                 </div>
@@ -146,15 +151,18 @@
     </div>
     <!-- /.main-container-inner -->
 </div>
+<!-- dialog -->
+<%@ include file="WEB-INF/dialog-news.jsp"%>
+<!-- dialog-over -->
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js "></script>
 <script>
     window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js "><\/script>')
 </script>
 <script src="js/bootstrap.js"></script>
-<script src="js/adnews.js "></script>
+
 <!-- ace scripts -->
 <script src="assets/js/ace-elements.min.js"></script>
 <script src="assets/js/ace.min.js"></script>
+<script src="js/adnews.js "></script>
 </body>
-
 </html>

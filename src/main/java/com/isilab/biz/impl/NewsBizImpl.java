@@ -6,7 +6,9 @@ import com.isilab.entity.NewsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
+import javax.enterprise.inject.New;
 import java.util.Date;
 import java.util.List;
 
@@ -25,10 +27,15 @@ public class NewsBizImpl implements NewsBiz {
     public void deleteNews(int id){
         newsDao.delete(newsDao.get(id));
     }
-    public void updateNews(String id,String title,String content){
-        newsDao.get(id).setTitle(title);
-        newsDao.get(id).setContent(content);
-        newsDao.update(newsDao.get(id));
+    public boolean updateNews(NewsEntity newsEntity){
+        try {
+            newsDao.update(newsEntity);
+            return true;
+        }catch (Exception e){
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            return false;
+        }
+
     }
     public List<NewsEntity> getAllNews() {
         return newsDao.getAll();

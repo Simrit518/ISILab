@@ -39,7 +39,7 @@
                 <li><a href="#about">实验室概况</a></li>
                 <li><a href="<%=path%>/academics">科学研究</a></li>
                 <li><a href="#about">课程教学</a></li>
-                <li><a href="#about">科研人员</a></li>
+                <li><a href="<%=path%>/people">科研人员</a></li>
                 <li><a href="#about">活动</a></li>
             </ul>
         </div>

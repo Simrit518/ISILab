@@ -4,16 +4,10 @@ import com.isilab.biz.AcademicsBiz;
 import com.isilab.biz.DocumentBiz;
 import com.isilab.biz.NewsBiz;
 import com.isilab.biz.ResultBiz;
-import com.isilab.entity.NewsEntity;
-import com.isilab.tool.LoginTool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-
-
-import javax.servlet.http.HttpSession;
-import java.util.List;
 
 /**
  * Created by Simrit on 2017/7/28.
@@ -40,5 +34,9 @@ public class MainAction {
         modelMap.addAttribute("resultlist", resultBiz.getLatestResult(3));
         modelMap.addAttribute("documentlist", documentBiz.getLatestDocument(3));
         return "index";
+    }
+    @RequestMapping(value = "/people", produces = "text/html;charset=UTF-8")
+    public String people(){
+        return "profilelist";
     }
 }
