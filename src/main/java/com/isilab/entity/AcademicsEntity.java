@@ -71,4 +71,5 @@ public class AcademicsEntity  {
         this.summary = summary;
     }
 
+
 }

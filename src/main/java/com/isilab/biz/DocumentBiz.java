@@ -10,6 +10,7 @@ import java.util.List;
 public interface DocumentBiz {
     public void addDocument(String title,String content,String summary);
     public void deleteDocument(int id);
+    public boolean updateDocument(DocumentEntity documentEntity);
     public List<DocumentEntity> getAllDocument();
     public List<DocumentEntity> getLatestDocument(int number);
     DocumentEntity getDocument(int id);

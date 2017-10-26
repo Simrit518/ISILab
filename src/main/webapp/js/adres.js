@@ -12,12 +12,22 @@ function deleteItem(id) {
             id:id
         },
         function(data,status){
-            if(data==MSG_SUCCESS){
-                alert("删除成功" );
+            if(data=='success'&&status=='success'){
+                location.reload();
             }
-            else if(data==MSG_FAILED){
+            else {
                 alert("删除失败");
             }
         }
     );
+}
+
+function updateModelShow(id){
+    var id=id;
+    $('#updateid').val(id);
+    $('#updateModel').modal('show');
+}
+
+function updateConfirm(){
+    $('#updateForm').submit();
 }

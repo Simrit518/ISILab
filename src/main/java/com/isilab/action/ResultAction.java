@@ -54,6 +54,37 @@ public class ResultAction {
     @ResponseBody
     public String resultDelete(@RequestParam int id) {
         resultBiz.deleteResult(id);
-        return TypeTool.CODE_RETURN.get(1).toString();
+        return "success";
+    }
+
+    /**
+     * 跳转到更改页面
+     */
+    @RequestMapping(value = "/resUpdatePage")
+    public String acaUpdatePage(@RequestParam int id,ModelMap modelMap) {
+        ResultEntity resultEntity=resultBiz.getResult(id);
+        modelMap.addAttribute("id",id);
+        modelMap.addAttribute("resultEntity",resultEntity);
+        modelMap.addAttribute("sliderBarNum",0);
+        return "updateres";
+    }
+    /**
+     * 更改
+     */
+    @RequestMapping(value = "/resUpdate", method = RequestMethod.POST)
+    @ResponseBody
+    public String acaUpdate(@RequestParam int id,
+                            @RequestParam String title,
+                            @RequestParam String summary,
+                            @RequestParam String content,
+                            @RequestParam String kind) {
+        ResultEntity resultEntity=resultBiz.getResult(id);
+        resultEntity.setTitle(title);
+        resultEntity.setSummary(summary);
+        resultEntity.setContent(content);
+        if (resultBiz.updateResult(resultEntity))
+            return "success";
+        else
+            return "fail";
     }
 }

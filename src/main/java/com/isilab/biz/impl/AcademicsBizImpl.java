@@ -6,6 +6,7 @@ import com.isilab.entity.AcademicsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,17 @@ public class AcademicsBizImpl implements AcademicsBiz {
     public void deleteAcademics(int id){
         academicsDao.delete(academicsDao.get(id));
     }
+    
+    public boolean updateAcademics(AcademicsEntity academicsEntity){
+        try {
+            academicsDao.update(academicsEntity);
+            return true;
+        }catch (Exception e){
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            return false;
+        }
+    }
+    
     public List<AcademicsEntity> getAllAcademics() {
         return academicsDao.getAll();
     }

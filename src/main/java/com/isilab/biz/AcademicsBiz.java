@@ -10,6 +10,7 @@ import java.util.List;
 public interface AcademicsBiz {
     public void addAcademics(String title,String content,String summary);
     public void deleteAcademics(int id);
+    public boolean updateAcademics(AcademicsEntity academicsEntity);
     public List<AcademicsEntity> getAllAcademics();
     public List<AcademicsEntity> getLatestAcademics(int number);
     AcademicsEntity getAcademics(int id);

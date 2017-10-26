@@ -6,6 +6,7 @@ import com.isilab.entity.DocumentEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,17 @@ public class DocumentBizImpl implements DocumentBiz {
     public void deleteDocument(int id){
         documentDao.delete(documentDao.get(id));
     }
+
+    public boolean updateDocument(DocumentEntity documentEntity){
+        try {
+            documentDao.update(documentEntity);
+            return true;
+        }catch (Exception e){
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            return false;
+        }
+    }
+
     public List<DocumentEntity> getAllDocument() {
         return documentDao.getAll();
     }

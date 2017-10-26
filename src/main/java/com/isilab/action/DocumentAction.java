@@ -54,6 +54,36 @@ public class DocumentAction {
     @ResponseBody
     public String documentDelete(@RequestParam int id) {
         documentBiz.deleteDocument(id);
-        return TypeTool.CODE_RETURN.get(1).toString();
+        return "success";
+    }
+    /**
+     * 跳转到更改页面
+     */
+    @RequestMapping(value = "/docUpdatePage")
+    public String acaUpdatePage(@RequestParam int id,ModelMap modelMap) {
+        DocumentEntity documentEntity=documentBiz.getDocument(id);
+        modelMap.addAttribute("id",id);
+        modelMap.addAttribute("documentEntity",documentEntity);
+        modelMap.addAttribute("sliderBarNum",0);
+        return "updatedoc";
+    }
+    /**
+     * 更改
+     */
+    @RequestMapping(value = "/docUpdate", method = RequestMethod.POST)
+    @ResponseBody
+    public String acaUpdate(@RequestParam int id,
+                            @RequestParam String title,
+                            @RequestParam String summary,
+                            @RequestParam String content,
+                            @RequestParam String kind) {
+        DocumentEntity documentEntity=documentBiz.getDocument(id);
+        documentEntity.setTitle(title);
+        documentEntity.setSummary(summary);
+        documentEntity.setContent(content);
+        if (documentBiz.updateDocument(documentEntity))
+            return "success";
+        else
+            return "fail";
     }
 }

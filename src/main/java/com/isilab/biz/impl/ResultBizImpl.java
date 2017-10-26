@@ -6,6 +6,7 @@ import com.isilab.entity.ResultEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,17 @@ public class ResultBizImpl implements ResultBiz {
     public void deleteResult(int id){
         resultDao.delete(resultDao.get(id));
     }
+
+    public boolean updateResult(ResultEntity resultEntity){
+        try {
+            resultDao.update(resultEntity);
+            return true;
+        }catch (Exception e){
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            return false;
+        }
+    }
+
     public List<ResultEntity> getAllResult() {
         return resultDao.getAll();
     }

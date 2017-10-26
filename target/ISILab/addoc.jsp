@@ -92,9 +92,13 @@
                                     <td><%=n.getDate()%></td>
                                     <td>
                                         <div class="btn-group">
-                                            <button id="delete" class="btn btn-xs btn-danger"
+                                            <button type="button" class="btn btn-xs btn-danger"
                                                     onclick="deleteItem(<%=n.getId()%>)">
                                                 <i class="icon-trash bigger-120"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-xs btn-primary"
+                                                    onclick="updateModelShow(<%=n.getId()%>)">
+                                                <i class="icon-pencil bigger-120"></i>
                                             </button>
                                         </div>
                                     </td>
@@ -111,26 +115,26 @@
                                             <%if (currentPage == 1) { %>
                                             class="disabled"
                                             <%} %>>
-                                        <button class="btn btn-xs btn-primary" onclick="pageFunc(1)"  aria-label="Previous">
+                                        <a href="javascript:pageFunc(1)" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
-                                        </button>
+                                        </a>
                                     </li>
                                     <%
                                         for (int i = 0; i < pageTotal; i++) {
                                     %>
                                     <li<%if (currentPage == i + 1) { %>
                                             class="active"
-                                            <%} %>><button class="btn btn-xs btn-primary" onclick="pageFunc(<%=i+1%>)" ><%=i + 1 %>
-                                    </button></li>
+                                            <%} %>><a href="javascript:pageFunc(<%=i+1%>)"><%=i + 1 %>
+                                    </a></li>
                                     <%
                                         }
                                     %>
                                     <li<%if (currentPage == pageTotal) { %>
                                             class="disabled"
                                             <%} %>>
-                                        <button class="btn btn-xs btn-primary" onclick="pageFunc(<%=pageTotal%>)"  aria-label="Next">
+                                        <a href="javascript:pageFunc(<%=pageTotal%>)" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
-                                        </button>
+                                        </a>
                                     </li>
                                 </ul>
                             </nav>
@@ -146,6 +150,7 @@
     </div>
     <!-- /.main-container-inner -->
 </div>
+<%@ include file="WEB-INF/dialog-doc.jsp"%>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js "></script>
 <script>
     window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js "><\/script>')
@@ -155,6 +160,7 @@
 <!-- ace scripts -->
 <script src="assets/js/ace-elements.min.js"></script>
 <script src="assets/js/ace.min.js"></script>
+
 </body>
 
 </html>

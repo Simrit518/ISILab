@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -67,7 +66,7 @@ public class NewsAction {
         modelMap.addAttribute("id",id);
         modelMap.addAttribute("newsEntity",newsEntity);
         modelMap.addAttribute("sliderBarNum",0);
-        return "update";
+        return "updatenews";
     }
     /**
      * 修改新闻

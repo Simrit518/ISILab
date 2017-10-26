@@ -54,6 +54,35 @@ public class AcademicsAction {
     @ResponseBody
     public String academicsDelete(@RequestParam int id) {
         academicsBiz.deleteAcademics(id);
-        return TypeTool.CODE_RETURN.get(1).toString();
+        return "success";
+    }
+    /**
+     * 跳转到更改页面
+     */
+    @RequestMapping(value = "/acaUpdatePage")
+    public String acaUpdatePage(@RequestParam int id,ModelMap modelMap) {
+        AcademicsEntity academicsEntity=academicsBiz.getAcademics(id);
+        modelMap.addAttribute("id",id);
+        modelMap.addAttribute("academicsEntity",academicsEntity);
+        modelMap.addAttribute("sliderBarNum",0);
+        return "updateaca";
+    }
+    /**
+     * 更改
+     */
+    @RequestMapping(value = "/acaUpdate", method = RequestMethod.POST)
+    @ResponseBody
+    public String acaUpdate(@RequestParam int id,
+                             @RequestParam String title,
+                             @RequestParam String summary,
+                             @RequestParam String content) {
+        AcademicsEntity academicsEntity=academicsBiz.getAcademics(id);
+        academicsEntity.setTitle(title);
+        academicsEntity.setSummary(summary);
+        academicsEntity.setContent(content);
+        if (academicsBiz.updateAcademics(academicsEntity))
+            return "success";
+        else
+            return "fail";
     }
 }

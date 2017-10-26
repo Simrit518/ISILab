@@ -22,7 +22,6 @@ public class ResultEntity  {
     private Date date;
     @Column(name = "summary")
     private String summary;
-
     public ResultEntity(){
     }
     public ResultEntity(String title,String content,Date date,String summary){
@@ -70,5 +69,4 @@ public class ResultEntity  {
     public void setSummary(String summary) {
         this.summary = summary;
     }
-
 }

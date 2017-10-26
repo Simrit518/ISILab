@@ -35,7 +35,6 @@ public class NewsBizImpl implements NewsBiz {
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
             return false;
         }
-
     }
     public List<NewsEntity> getAllNews() {
         return newsDao.getAll();
