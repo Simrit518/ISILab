@@ -156,11 +156,10 @@
     window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js "><\/script>')
 </script>
 <script src="js/bootstrap.js"></script>
-<script src="js/addoc.js "></script>
 <!-- ace scripts -->
 <script src="assets/js/ace-elements.min.js"></script>
 <script src="assets/js/ace.min.js"></script>
-
+<script src="js/addoc.js "></script>
 </body>
 
 </html>

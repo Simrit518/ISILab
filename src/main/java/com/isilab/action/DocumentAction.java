@@ -75,8 +75,7 @@ public class DocumentAction {
     public String acaUpdate(@RequestParam int id,
                             @RequestParam String title,
                             @RequestParam String summary,
-                            @RequestParam String content,
-                            @RequestParam String kind) {
+                            @RequestParam String content) {
         DocumentEntity documentEntity=documentBiz.getDocument(id);
         documentEntity.setTitle(title);
         documentEntity.setSummary(summary);

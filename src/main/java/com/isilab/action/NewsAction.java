@@ -76,13 +76,11 @@ public class NewsAction {
     public String newsUpdate(@RequestParam int id,
                              @RequestParam String title,
                              @RequestParam String summary,
-                             @RequestParam String content,
-                             @RequestParam String kind) {
+                             @RequestParam String content) {
         NewsEntity newsEntity=newsBiz.getNews(id);
         newsEntity.setTitle(title);
         newsEntity.setSummary(summary);
         newsEntity.setContent(content);
-        newsEntity.setKind(kind);
         if (newsBiz.updateNews(newsEntity))
             return "success";
         else

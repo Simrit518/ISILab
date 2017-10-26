@@ -74,7 +74,7 @@
         <div class="main-content">
             <div class="page-content">
                 <div class="page-header">
-                    <h1>修改新闻</h1>
+                    <h1>修改</h1>
                 </div>
                 <!-- /.page-header -->
                 <div class="row">
