@@ -35,8 +35,18 @@ public class MainAction {
         modelMap.addAttribute("documentlist", documentBiz.getLatestDocument(3));
         return "index";
     }
-    @RequestMapping(value = "/people", produces = "text/html;charset=UTF-8")
-    public String people(){
+    /**
+     * 跳转到科研人员
+     */
+    @RequestMapping(value = "/profilelist", produces = "text/html;charset=UTF-8")
+    public String profilelist(){
         return "profilelist";
+    }
+    /**
+     * 跳转到实验室概况
+     */
+    @RequestMapping(value = "/introduction", produces = "text/html;charset=UTF-8")
+    public String introduction(){
+        return "introduction";
     }
 }

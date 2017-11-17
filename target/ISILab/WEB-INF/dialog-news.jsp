@@ -13,7 +13,7 @@
             </div>
             <div class="modal-footer">
                 <form action="newsUpdatePage" id="updateForm">
-                    <input name="id" id="updatenewsid" type="hidden" value=""/>
+                    <input name="id" id="updateid" type="hidden" value=""/>
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                     <button type="button" class="btn btn-primary" onclick="updateConfirm()">确认</button>
                 </form>

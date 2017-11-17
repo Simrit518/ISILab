@@ -36,10 +36,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="<%=path%>/news">新闻公告</a></li>
-                <li><a href="#about">实验室概况</a></li>
+                <li><a href="<%=path%>/introduction">实验室概况</a></li>
                 <li><a href="<%=path%>/academics">科学研究</a></li>
                 <li><a href="#about">课程教学</a></li>
-                <li><a href="<%=path%>/people">科研人员</a></li>
+                <li><a href="<%=path%>/profilelist">科研人员</a></li>
                 <li><a href="#about">活动</a></li>
             </ul>
         </div>
